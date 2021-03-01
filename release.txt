@@ -1,0 +1,19 @@
+tag  /changes        /epochs            weights
+
+2.1 使用最新的yolov5s代码重新训练和构建 unknown
+2.2 yolo5s 自己改数据增强调节  200    best_5s.pt
+2.3 yolo5l 使用默认参数     100            best_5l.pt  (目前map最高)
+
+
+
+
+
+2.7 yolo5x 修改threshold =0.01(以前是0.001)， img1080 结果精读还是有点降了
+2.8 使用5l， 修改threhold=0.001, img size=1280, 使用时间 ：3804.630s
+2.9 fineturn best_5l.pt, 50 epochs, 设置跟2.8类似
+
+
+----------------------------------------------------------------------
+3.0 替换detect.py，imgsize=640 ,threhold=0.001， 使用融合模型， 融合5s / 5l  map还有点降了，3909.601s
+3.1 使用3.0的 imgsize = 1080, 其他一致，结果是timeout, map提升1个点左右， 6402.396s（1.7h）
+3.2 imgsize=1080 融合5x, 5l，map还是有降了（3.4），而且time out ， 7023.359s
